@@ -1,5 +1,3 @@
-import React, { Fragment } from 'react';
-import logo from './logo.svg';
 import './style/App.scss';
 import Home from './views/Home';
 import Header from './components/Header/Header';
