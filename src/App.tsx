@@ -1,18 +1,17 @@
 import './style/App.scss';
-import Home from './views/Home';
+import { Navigate, Routes, Route } from "react-router-dom";
 import Header from './components/Header/Header';
-import { Routes, Route } from "react-router-dom";
+import Home from './views/Home';
 
 function App() {
 	return (
-			<>
-				<div className="App">
-					<Header />
-					<Routes>
-						<Route path="/" element={<Home />} />
-					</Routes>
-				</div>
-			</>
+		<div className="App">
+			<Header />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="*" element={<Navigate to="/" />} />
+			</Routes>
+		</div>
 	);
 }
 

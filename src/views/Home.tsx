@@ -1,5 +1,3 @@
-import React, { Component, Fragment } from 'react';
-
 function Home() {
 	return (
 		<>
