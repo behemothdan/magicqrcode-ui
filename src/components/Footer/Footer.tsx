@@ -2,7 +2,7 @@ import "./Footer.scss";
 
 const Footer = () => (
 	<footer role="contentinfo">
-		<span>Easily generate printable sheets of QR codes to share your Magic decks in real life!</span>
+		<span>&copy; 2022 <a target="_blank" rel="noreferrer" href="http://twitter.com/behemothdan">BehemothDan</a></span>
 	</footer>
 )
 

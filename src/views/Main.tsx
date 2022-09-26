@@ -1,4 +1,4 @@
-import "../style/Home.scss";
+import "../style/Main.scss";
 import AddDeckList from "../components/AddDecklist/AddDecklist";
 
 function Home() {
