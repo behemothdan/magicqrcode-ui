@@ -6,6 +6,9 @@ html {
 
 a {
 	color: $offwhitetext;
+	&:hover {
+		color: $bloodorange;
+	}
 }
 
 body {

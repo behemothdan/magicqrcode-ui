@@ -1,7 +1,7 @@
 @import '../style/variables';
 
 main {
-	background-color: #41332a;
+	background-color: $lightgray;
 	border-radius: 10px;
 	box-shadow: $dropshadow;
 	display: flex;
