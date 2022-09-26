@@ -1,10 +1,12 @@
+import "../style/Home.scss";
+import AddDeckList from "../components/AddDecklist/AddDecklist";
+
 function Home() {
 	return (
-		<>
-			<main>
-				Hello!
-			</main>
-		</>
+		<main role="main">
+			Hello!
+			<AddDeckList />
+		</main>
 	)
 }
 

@@ -1,0 +1,12 @@
+@import '../style/variables';
+
+main {
+	background-color: #FFFFFF;
+	border-radius: 10px;
+	box-shadow: $dropshadow;
+	display: flex;
+	flex: 1 0 auto;
+	font-size: calc(14px + 2vmin);
+	padding: 15px;
+	width: 70vw;
+}

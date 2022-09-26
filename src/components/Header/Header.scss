@@ -1,10 +1,24 @@
+@import '../../style/variables';
+
 header {
 	align-items: center;
-	background-color: #282c34;
-	color: white;
+	color: #FFFFFF;
 	display: flex;
 	flex-direction: column;
-	font-size: calc(10px + 2vmin);
+	font-size: calc(14px + 2vmin);
 	justify-content: center;
-	min-height: 50vh;
+	margin-bottom: 15px;
+	min-height: 30vh;
+	width: 100vw;
+
+	h1,
+	>div {
+		color: $offwhitetext;
+		text-align: center;
+		text-shadow: $dropshadow;
+	}
+
+	>div {
+		font-size: calc(8px + 2vmin);
+	}
 }
