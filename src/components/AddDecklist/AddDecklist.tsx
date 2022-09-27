@@ -19,7 +19,7 @@ const AddDeckList = () => (
 		<InputBox
 			name="QR Label"
 			labelValue="Commander/Deck Name"
-			placeholder="Commander/Deck Name"
+			placeholder="Yawgmoth, Thran Physician"
 			type="text"
 		/>
 	</div>
