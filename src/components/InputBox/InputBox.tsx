@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
 const InputBox = ({
 	feedback, labelValue, name, placeholder, type }:
 	{ feedback?: string, labelValue: string, name: string, placeholder?: string, required?: string, type: string }) => {
+
 	return (
 		<div className="input">
 			{labelValue &&
