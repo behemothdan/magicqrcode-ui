@@ -3,18 +3,18 @@
 .input {
     label,
     input {
-        transition: all 0.2s;
         touch-action: manipulation;
+        transition: all 0.2s;
     }
 
     input[type=text] {
-        cursor: text;
         -webkit-appearance: none;
-        padding: 7px;
-        border: none;
-        border-radius: 7px;
         background-color: $bloodorange;
+        border-radius: 7px;
+        border: none;
         color: $babyblue;
+        cursor: text;
+        padding: 7px;
 
         &:focus {
             outline: none;
