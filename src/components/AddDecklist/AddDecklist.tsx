@@ -5,6 +5,12 @@ import PhyrexianPlus from '../../images/phyrexian-plus.png';
 
 const AddDeckList = () => {
 	const [feedback, setFeedback] = useState();
+
+	/**
+	 * By adding in new objects into the state array and then iterating over
+	 * the array, we use that to dynamically create form elements whenever
+	 * the user clicks the 'Add Deck' button.
+	 */
 	const [inputFields, setInputFields] = useState([{
 		"url": "", "commander": "", "color": "#000000"
 	}])
