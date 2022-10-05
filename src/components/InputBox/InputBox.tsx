@@ -1,23 +1,25 @@
 import PropTypes from 'prop-types';
+import "./InputBox.scss";
 
 const InputBox = ({
-	feedback, labelValue, name, placeholder, type, value, onChange = () => {} }:
-	{ feedback?: string, labelValue: string, name: string, placeholder?: string, required?: string, type: string, value: string, onChange?: any }) => {
+	customClass, feedback, labelValue, name, placeholder, title, type, value, onChange = () => {} }:
+	{ customClass?: string, feedback?: string, labelValue: string, name: string, placeholder?: string, required?: string, title?: string, type: string, value: string, onChange?: any }) => {
 
 	return (
-		<div className="input">
+		<span className={"input " + (customClass ? customClass : '')}>
 			{labelValue &&
 				<label htmlFor={name}>{labelValue}</label>
 			}
 			<input
 				name={name}
 				placeholder={placeholder}
+				title={title ? title : ''}
 				type={type}
 				value={value}
 				onChange={onChange}
 			/>
 			<span id={name + '_error'} className="error" role="alert">{feedback}</span>
-		</div>
+		</span>
 	)
 }
 

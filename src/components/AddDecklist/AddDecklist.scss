@@ -1,31 +1,113 @@
 @import '../../style/variables';
 
-.input {
-    label,
-    input {
-        touch-action: manipulation;
-        transition: all 0.2s;
-    }
+#deckSubmissionForm {
+	background-color: rgba(0, 0, 0, .3);
+	border-radius: 7px;
+	font-size: calc(14px + 2vmin);
+	padding: 10px;
+	width: 80%;
+}
 
-    input[type=text] {
-        -webkit-appearance: none;
-        background-color: $bloodorange;
-        border-radius: 7px;
-        border: none;
-        color: $babyblue;
-        cursor: text;
-        padding: 7px;
+form {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
 
-        &:focus {
-            outline: none;
-        }
+	// This is the individual blocks containing deck information
+	div {
+		width: 100%;
 
-        &::placeholder {
-            color: #dfe6eb;
-        }
+		// In theory we could move almost all of this styling to
+		// the InputBox.scss however that might be overly aggressive
+		// on styling what is meant to be a generic component. In a
+		// bigger project we could still use a designer's style guide
+		// to populate the InputBox.scss with site standards.
+		label,
+		input {
+			color: #FFFFFF;
+			display: flex;
+			flex-direction: column;
+			font-size: 12px;
+			padding-bottom: 3px;
+			touch-action: manipulation;
+			transition: all 0.2s;
 
-        &:focus::placeholder {
-            opacity: .5;
-        }
-    }
+			&[type=color] {
+				background: $darkblue;
+				border: 0;
+				padding: 0;
+			}
+
+			&[type=text] {
+				background-color: $offwhitetext;
+				border-radius: 5px;
+				border: none;
+				color: $darkblue;
+				cursor: text;
+				padding: 7px;
+				width: 97%;
+
+				&:focus {
+					outline: solid 1px #000000;
+				}
+
+				&::placeholder {
+					color: $lightblue;
+				}
+
+				&:focus::placeholder {
+					opacity: .5;
+				}
+
+				&[name=url] {
+					font-size: 18px;
+					padding: 5px;
+				}
+			}
+		}
+	}
+
+	// This is for the Add Deck and Generate QR code buttons
+	.buttonContainer {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
+		margin-top: 10px;
+
+		button {
+			align-items: center;
+			border-radius: 5px;
+			border: solid 1px #000000;
+			display: inline-flex;
+			height: 30px;
+			min-width: 100px;
+			margin-right: 15px;
+
+			image {
+				float: left;
+			}
+		}
+	}
+
+	.subfields {
+		align-items: flex-start;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		margin-top: 10px;
+		min-width: 100%;
+		margin-bottom: 10px;
+
+
+		button {
+			margin: 0 0 0 15px;
+		}
+
+		.commanderString {
+			margin-right: 30px;
+			flex-grow: .95;
+		}
+	}
 }

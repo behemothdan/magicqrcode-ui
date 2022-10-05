@@ -1,40 +1,49 @@
 @import './variables';
 
+@font-face {
+	font-family: 'Amulya-Bold';
+	src: url('../fonts/Amulya-Bold.woff2') format('woff2'),
+		url('../fonts/Amulya-Bold.woff') format('woff'),
+		url('../fonts/Amulya-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Synonym-Regular';
+	src: url('../fonts/Synonym-Regular.woff2') format('woff2'),
+		url('../fonts/Synonym-Regular.woff') format('woff'),
+		url('../fonts/Synonym-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+
 html {
 	height: 100%;
 }
 
-a {
-	color: $offwhitetext;
-	&:hover {
-		color: $bloodorange;
-	}
-}
-
 body {
-	// background-image: linear-gradient(0deg, $darkblue 50vh, $darkblue 50vh);
+	background-attachment: fixed;
 	background-color: #000000;
-	background-image: url(../images/basic-lands-ryan-quintal-unsplash.jpg);
-	background-position: right bottom;
+	background-image: url(../images/phyrexianswamp-bg.jpg);
+	background-position: bottom center;
 	background-repeat: no-repeat;
-	display: flex;
-	flex-direction: column;
+	background-size: cover;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	height: 100vh;
 	margin: 0;
+	padding: 0;
 
-	// &:before {
-	// 	background-image: url(../images/header-background-steve-johnson-unsplash.jpg);
-	// 	background-size: cover;
-	// 	content: "";
-	// 	min-height: 50vh;
-	// 	min-width: 100vw;
-	// 	opacity: 40%;
-	// 	position: absolute;
-	// 	z-index: -1;
-	// }
+	a {
+		color: $offwhitetext;
+
+		&:hover {
+			color: $bloodorange;
+		}
+	}
 }
