@@ -2,6 +2,7 @@ import "./AddDecklist.scss";
 import InputBox from "../InputBox/InputBox";
 import { useState } from "react";
 import PhyrexianPlus from '../../images/phyrexian-plus.png';
+import { blob } from "stream/consumers";
 
 const AddDeckList = () => {
 	const [feedback, setFeedback] = useState();
@@ -17,7 +18,21 @@ const AddDeckList = () => {
 
 	let handleSubmit = async (e: any) => {
 		e.preventDefault();
-		console.log(inputFields);
+
+		await fetch(process.env.REACT_APP_API_URL + "/api/v1/generateqr", {
+			method: "POST",
+			headers: {"Content-Type": "application/json"},
+			body: `{"decklists":` + JSON.stringify(inputFields) + `}`,
+		}).then( async response => {
+			/**
+			 * This is turning the ReadableStream that is being returned from
+			 * the API into a viewable PDF and loaded into a new window in the browser.
+			 */
+			const qrBlob = await response.blob();
+			const newQrBlob = new Blob([qrBlob], {type: 'application/pdf'});
+			const blobUrl = window.URL.createObjectURL(newQrBlob);
+			window.open(blobUrl);
+		})
 	}
 
 	/**
