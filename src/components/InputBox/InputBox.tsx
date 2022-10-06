@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import "./InputBox.scss";
 
 const InputBox = ({
-	customClass, feedback, labelValue, name, placeholder, title, type, value, onChange = () => {} }:
-	{ customClass?: string, feedback?: string, labelValue: string, name: string, placeholder?: string, required?: string, title?: string, type: string, value: string, onChange?: any }) => {
+	customClass, labelValue, name, placeholder, title, type, value, onChange = () => {} }:
+	{ customClass?: string, labelValue: string, name: string, placeholder?: string, required?: string, title?: string, type: string, value: string, onChange?: any }) => {
 
 	return (
 		<span className={"input " + (customClass ? customClass : '')}>
@@ -18,7 +18,6 @@ const InputBox = ({
 				value={value}
 				onChange={onChange}
 			/>
-			<span id={name + '_error'} className="error" role="alert">{feedback}</span>
 		</span>
 	)
 }
