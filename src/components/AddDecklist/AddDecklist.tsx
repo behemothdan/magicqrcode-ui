@@ -24,7 +24,7 @@ const AddDeckList = () => {
 			headers: { "Content-Type": "application/json" },
 			body: `{"decklists":` + JSON.stringify(inputFields) + `}`,
 		}).then(async response => {
-			if (response.statusText === "Ok") {
+			if (response.status === 200 && response.statusText !== "No QR codes generated") {
 				/**
 				 * This is turning the ReadableStream that is being returned from
 				 * the API into a viewable PDF and loaded into a new window in the browser.
@@ -111,8 +111,8 @@ const AddDeckList = () => {
 				<span className="buttonContainer">
 					<button onClick={addNewDeckFields} title="Add another deck"><img height="25" width="25" alt="Add Another Deck" src={PhyrexianPlus} />Add Deck</button>
 					<button onClick={handleSubmit} title="Print QR Codes">Generate QR Codes</button>
-					<span id={'error'} className="error" role="alert">{feedback}</span>
 				</span>
+				<div id={'error'} className="error" role="alert">{feedback}</div>
 			</form>
 		</div>
 	)
