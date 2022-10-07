@@ -53,12 +53,12 @@
 		"qr"
 	],
 	"author": "Daniel R. Gray",
-	"url": "https://lgs.events",
+	"url": "https://behemothdan.dev/mqr",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/users/behemothdan/projects/1"
 	},
-	"homepage": "https://github.com/users/behemothdan/projects/1",
+	"homepage": ".",
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
