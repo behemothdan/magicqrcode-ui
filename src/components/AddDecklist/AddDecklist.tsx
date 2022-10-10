@@ -19,9 +19,23 @@ const AddDeckList = () => {
 		e.preventDefault();
 		setFeedback(null);
 
+		/**
+		 * If this works, we had to do a couple things to get here.
+		 * First of all, the 'Accept' value matches a Binary Media Type
+		 * configured in the Settings of our API Gateway exactly.
+		 * You can't have one as a wildcard and one of them not. In fact, most
+		 * say you can't have them both wildcarded either. When we set up
+		 * our original Lambda Proxy integration in the API Gateway, it created
+		 * an OPTIONS method for us. For some reason it was creating errors we
+		 * didn't care about since this project is using any user credentials
+		 * or anything like that. We completely deleted the OPTIONS method to
+		 * remove a number of weird CORS errors and 502 errors. We got to this
+		 * point because we could see a malformed PDF coming back from the browser
+		 * and the GETR request working fine. Hopefully this crap works.
+		 */
 		await fetch(process.env.REACT_APP_API_URL + "/api/v1/generateqr", {
 			method: "POST",
-			headers: { 'Content-Type': 'application/json', 'Accept': '*/*' },
+			headers: { 'Content-Type': 'application/json', 'Accept': 'application/pdf' },
 			body: `{"decklists":` + JSON.stringify(inputFields) + `}`,
 		}).then(async response => {
 			if (response.status === 200 && response.statusText !== "No QR codes generated") {
