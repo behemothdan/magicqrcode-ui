@@ -21,7 +21,7 @@ const AddDeckList = () => {
 
 		await fetch(process.env.REACT_APP_API_URL + "/api/v1/generateqr", {
 			method: "POST",
-			headers: { "Content-Type": "application/json" },
+			headers: { 'Content-Type': 'application/json', 'Accept': '*/*' },
 			body: `{"decklists":` + JSON.stringify(inputFields) + `}`,
 		}).then(async response => {
 			if (response.status === 200 && response.statusText !== "No QR codes generated") {
