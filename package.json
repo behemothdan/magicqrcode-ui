@@ -1,7 +1,7 @@
 {
 	"name": "magicqrcode-ui",
 	"version": "1.0.0",
-	"private": true,
+	"description": "Front-end for users to submit deck links to generate printable QR codes",
 	"dependencies": {
 		"@types/jest": "^27.5.2",
 		"@types/node": "^16.11.60",
@@ -54,7 +54,7 @@
 	],
 	"author": "Daniel R. Gray",
 	"url": "https://behemothdan.dev/mqr",
-	"license": "ISC",
+	"license": "GPL-3.0-or-later",
 	"bugs": {
 		"url": "https://github.com/users/behemothdan/projects/1"
 	},
