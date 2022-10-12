@@ -1,20 +1,19 @@
-import React, { Fragment } from 'react';
-import logo from './logo.svg';
 import './style/App.scss';
-import Home from './views/Home';
+import { Navigate, Routes, Route } from "react-router-dom";
 import Header from './components/Header/Header';
-import { Routes, Route } from "react-router-dom";
+import Footer from './components/Footer/Footer';
+import Main from './views/Main';
 
 function App() {
 	return (
-			<>
-				<div className="App">
-					<Header />
-					<Routes>
-						<Route path="/" element={<Home />} />
-					</Routes>
-				</div>
-			</>
+		<div className="App">
+			<Header />
+			<Routes>
+				<Route path="/" element={<Main />} />
+				<Route path="*" element={<Navigate to="/" />} />
+			</Routes>
+			<Footer />
+		</div>
 	);
 }
 

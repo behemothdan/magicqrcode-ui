@@ -1,0 +1,51 @@
+@import '../../style/variables';
+
+header {
+	align-items: center;
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: row;
+	flex-shrink: 0;
+	font-size: calc(14px + 2vmin);
+	justify-content: space-between;
+	position: sticky;
+	top: 0;
+	transition: 0.2s;
+	width: 100vw;
+
+	h1,
+	>div {
+		color: $offwhitetext;
+		display: inline;
+		text-align: center;
+		text-shadow: $dropshadow;
+		font-family: 'Synonym', sans-serif;
+	}
+
+	h1 {
+		width: 30vw;
+		font-family: 'Amulya', sans-serif;
+		margin-bottom: 10px;
+		margin-top: 10px;
+
+		a {
+			text-decoration: none;
+			&:hover {
+				transition: 0.5s;
+			}
+		}
+
+		img {
+			width: calc(10px + 2vmin);
+			// Change PNG to white because I am too lazy to change it in Photoshop.
+			filter: invert(88%) saturate(100%) hue-rotate(100deg) brightness(100%) contrast(100%);
+			padding-right: 10px;
+		}
+	}
+
+	>div {
+		padding: 10px;
+		width: 65vw;
+		font-size: calc(6px + 2vmin);
+	}
+}

@@ -1,22 +1,18 @@
 {
 	"name": "magicqrcode-ui",
 	"version": "1.0.0",
-	"private": true,
+	"description": "Front-end for users to submit deck links to generate printable QR codes",
 	"dependencies": {
-		"@testing-library/jest-dom": "^5.16.5",
-		"@testing-library/react": "^13.4.0",
-		"@testing-library/user-event": "^13.5.0",
 		"@types/jest": "^27.5.2",
 		"@types/node": "^16.11.60",
 		"@types/react": "^18.0.21",
 		"@types/react-dom": "^18.0.6",
-		"dotenv": "^16.0.2",
+		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router": "^6.4.1",
 		"react-router-dom": "^6.4.1",
 		"react-scripts": "^5.0.1",
-		"typescript": "^4.8.3",
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
@@ -57,13 +53,18 @@
 		"qr"
 	],
 	"author": "Daniel R. Gray",
-	"url": "https://lgs.events",
-	"license": "ISC",
+	"url": "https://behemothdan.dev/mqr",
+	"license": "GPL-3.0-or-later",
 	"bugs": {
 		"url": "https://github.com/users/behemothdan/projects/1"
 	},
-	"homepage": "https://github.com/users/behemothdan/projects/1",
+	"homepage": ".",
 	"devDependencies": {
-		"sass": "^1.55.0"
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^14.4.3",
+		"dotenv": "^16.0.3",
+		"sass": "^1.55.0",
+		"typescript": "^4.8.4"
 	}
 }
