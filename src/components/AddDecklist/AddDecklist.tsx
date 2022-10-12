@@ -4,7 +4,7 @@ import { useState } from "react";
 import PhyrexianPlus from '../../images/phyrexian-plus.png';
 
 const AddDeckList = () => {
-	const [feedback, setFeedback] = useState(null);
+	const [feedback, setFeedback] = useState<any | null>(null);
 
 	/**
 	 * By adding in new objects into the state array and then iterating over
@@ -20,7 +20,7 @@ const AddDeckList = () => {
 		setFeedback(null);
 
 		/**
-		 * If this works, we had to do a couple things to get here.
+		 * We had to do a couple things to get here.
 		 * First of all, the 'Accept' value matches a Binary Media Type
 		 * configured in the Settings of our API Gateway exactly.
 		 * You can't have one as a wildcard and one of them not. In fact, most
@@ -31,7 +31,7 @@ const AddDeckList = () => {
 		 * or anything like that. We completely deleted the OPTIONS method to
 		 * remove a number of weird CORS errors and 502 errors. We got to this
 		 * point because we could see a malformed PDF coming back from the browser
-		 * and the GETR request working fine. Hopefully this crap works.
+		 * and the GET request working fine..
 		 */
 		await fetch(process.env.REACT_APP_API_URL + "/api/v1/generateqr", {
 			method: "POST",
@@ -75,10 +75,19 @@ const AddDeckList = () => {
 		setInputFields(data);
 	}
 
-	const addNewDeckFields = () => {
-		let newDeckFields = { "url": "", "commander": "", "color": "#000000" }
-		setInputFields([...inputFields, newDeckFields]);
-		scrollToNewElement(inputFields.length - 1);
+	const addNewDeckFields = (e: any) => {
+		/**
+		 * This prevents the Add Deck button from submitting the form
+		 * when we add it.
+		 */
+		e.preventDefault();
+		if(inputFields.length <= 15) {
+			let newDeckFields = { "url": "", "commander": "", "color": "#000000" }
+			setInputFields([...inputFields, newDeckFields]);
+			scrollToNewElement(inputFields.length - 1);
+		} else {
+			setFeedback("Max deck limit of 16 reached. Print and start a new form to print more.");
+		}
 	}
 
 	return (
@@ -89,7 +98,7 @@ const AddDeckList = () => {
 						<div id={"deckinfo-" + index} key={"deckinfo-" + index}>
 							<InputBox
 								customClass={"decklistUrl"}
-								labelValue="Decklist"
+								labelValue={(index + 1) + ". Decklist"}
 								name="url"
 								onChange={(event: any) => handleFormChange(index, event)}
 								placeholder="Decklist URL"

@@ -1,10 +1,7 @@
 @import '../../style/variables';
 
 #deckSubmissionForm {
-	background-color: rgba(0, 0, 0, .3);
-	border-radius: 7px;
 	font-size: calc(14px + 2vmin);
-	padding: 10px;
 	width: 80%;
 
 	#error {
@@ -33,7 +30,11 @@ form {
 	width: 100%;
 
 	// This is the individual blocks containing deck information
-	div {
+	> div {
+		background-color: rgba(0, 0, 0, .3);
+		border-radius: 7px;
+		margin-bottom: 7px;
+		padding: 10px;
 		width: 100%;
 
 		// In theory we could move almost all of this styling to
