@@ -1,6 +1,6 @@
 import "./AddDecklist.scss";
-import InputBox from "../InputBox/InputBox";
 import { useState } from "react";
+import InputBox from "../InputBox/InputBox";
 import PhyrexianPlus from '../../images/phyrexian-plus.png';
 
 const AddDeckList = () => {
@@ -77,8 +77,7 @@ const AddDeckList = () => {
 
 	const addNewDeckFields = (e: any) => {
 		/**
-		 * This prevents the Add Deck button from submitting the form
-		 * when we add it.
+		 * This prevents the Add Deck button from submitting the form when we add it.
 		 */
 		e.preventDefault();
 		if(inputFields.length <= 15) {
@@ -101,7 +100,7 @@ const AddDeckList = () => {
 								labelValue={(index + 1) + ". Decklist"}
 								name="url"
 								onChange={(event: any) => handleFormChange(index, event)}
-								placeholder="Decklist URL"
+								placeholder="Decklist URL (Moxfield, Archidekt, and TappedOut)"
 								required="required"
 								title={"Decklist URL"}
 								type="text"
@@ -111,9 +110,10 @@ const AddDeckList = () => {
 								<InputBox
 									customClass={"commanderString"}
 									labelValue="Deck Name"
+									maxlength={50}
 									name="commander"
 									onChange={(event: any) => handleFormChange(index, event)}
-									placeholder="i.e. Yawgmoth, Thran Physician"
+									placeholder="i.e. Yawgmoth, Thran Physician (Optional - 50 characters max)"
 									title={"Deck Name"}
 									type="text"
 									value={input.commander}
